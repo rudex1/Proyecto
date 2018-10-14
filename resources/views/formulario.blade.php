@@ -75,6 +75,55 @@
               /* This extra magin represent the same space as the space between
                  the labels and their text fields */
               margin-left: .5em;
+            }html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
             }
         </style>
     </head>
@@ -93,7 +142,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel Formulario
                 </div>
 
                 <div class="links">
@@ -104,29 +153,45 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+                <br>
                 <!-- Formulario -->
-                <form action="({{}})" method="GET">
+                <form action="{{url('saludo')}}" method="GET">
                     <div>
                         <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="user_name" />
+                        <input type="text" id="name" name="name" placeholder="Nombre" size="30" maxlength="10" />
                     </div>
                     <div>
                         <label for="name">Apellido:</label>
-                        <input type="text" id="apellido" name="user_apellido" />
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" size="30" maxlength="10" />
                     </div>
                     <div>
                         <label for="mail">E-mail:</label>
-                        <input type="email" id="mail" name="user_email" />
+                        <input type="email" id="mail" name="email" placeholder="E-mail" size="30" maxlength="10" />
                     </div>
                     <div>
                         <label for="msg">Message:</label>
-                        <textarea id="msg" name="user_message"></textarea>
+                        <textarea id="msg" name="message" placeholder="Message" maxlength="10"></textarea>
+                    </div>
+                    <div>
+                        <label for="color">Color: </label>
+                        <input name="color" type="color" value="#000000" />
+                        <?php 
+                            /*if ($_GET['color'])
+                            echo "El color seleccionado es: " .$_GET['color'];
+                        $(document).ready(function(){
+                                $("input[name=color]").change(function(){
+                                    alert($('input[name=color]').val());
+                                    $('#colorseleccionado').val($(this).val());
+                                });
+                            });*/
+                        ?>
+
                     </div>
                     
                     <div class="button">
-                        <button type="submit">Send your message</button>
-                        <button type="submit">Send your message</button>
-                        <button type="submit">Send your message</button>
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Borrar</button>
+                        <button type="button">Volver</button>
                     </div>
                 </form>
 

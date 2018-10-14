@@ -79,11 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel Saludo
                 </div>
 
                 <div class="links">
-                    <p style="font-size: 100px:color:{{$color}}">Hola: {{$nombre}}</p>
+                   
+                    <p style="font-size: 100px:color:{{$color}}">Hola: {{$nombre}}</p><br>
+                    <p>Apellido: {{$apellido}}</p><br>
+                    <p>E-mail: {{$email}}</p><br>
+                    <p>Message: {{$message}}</p>
                 </div>
             </div>
         </div>

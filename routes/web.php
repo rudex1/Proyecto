@@ -16,15 +16,18 @@ Route::get('/', function () {
 });
 
 /* Ruta saludo */
-Route::get('/saludo/{nombre}/{color}', function($nombre, $color){
+/*Route::get('/   /{nombre}/{color}', function($nombre, $color){
 	return view('saludo')->with[('nombre'=>$nombre, 'color'=>$color)];
 
-})->where('nombre','[a-zA-Z]+');
+})->where('nombre','[a-zA-Z]+');*/
 
 /* Ruta formulario */
-Route::get('/formulario', function(request $request){
+Route::get('/formulario', function(){
 	return view('formulario');
-
 });
+
+Route::get('/saludo/{nombre}/{color}', 'PaginaController@index');
+Route::get('/', 'PaginaController@store');
+Route::get('/saludo', 'PaginaController@store');
 
 
