@@ -27,7 +27,7 @@ Route::get('/formulario', function(){
 });
 
 Route::get('/saludo/{nombre}/{color}', 'PaginaController@index');
-Route::get('/', 'PaginaController@store');
+//Route::get('/', 'PaginaController@store');
 Route::get('/saludo', 'PaginaController@store');
 
 

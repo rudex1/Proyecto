@@ -158,19 +158,19 @@
                 <form action="<?php echo e(url('saludo')); ?>" method="GET">
                     <div>
                         <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" placeholder="Nombre" size="30" maxlength="10" />
+                        <input type="text" id="name" name="name" placeholder="Nombre" size="30" maxlength="20" />
                     </div>
                     <div>
                         <label for="name">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" size="30" maxlength="10" />
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" size="30" maxlength="20" />
                     </div>
                     <div>
                         <label for="mail">E-mail:</label>
-                        <input type="email" id="mail" name="email" placeholder="E-mail" size="30" maxlength="10" />
+                        <input type="email" id="mail" name="email" placeholder="E-mail" size="30" maxlength="50" />
                     </div>
                     <div>
                         <label for="msg">Message:</label>
-                        <textarea id="msg" name="message" placeholder="Message" maxlength="10"></textarea>
+                        <textarea id="msg" name="message" placeholder="Message" maxlength="100"></textarea>
                     </div>
                     <div>
                         <label for="color">Color: </label>
