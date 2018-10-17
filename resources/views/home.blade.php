@@ -11,10 +11,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{assets('css/bootstarp.min.css')}}">
 
-        
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -31,15 +29,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Saludo
+                    Laravel
                 </div>
 
                 <div class="links">
-                   
-                    <p style="font-size: 100px:color:{{$color}}">Hola: {{$nombre}}</p><br>
-                    <p>Apellido: {{$apellido}}</p><br>
-                    <p>E-mail: {{$email}}</p><br>
-                    <p>Message: {{$message}}</p>
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>

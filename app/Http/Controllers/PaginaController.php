@@ -26,6 +26,12 @@ class PaginaController extends Controller
         //
     }
 
+    public function calcular()
+    {
+        return view('calculadora');
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
