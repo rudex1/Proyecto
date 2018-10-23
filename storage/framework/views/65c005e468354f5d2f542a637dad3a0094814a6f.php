@@ -1,95 +1,66 @@
-<!doctype html>
-<html lang="<?php echo e(app()->getLocale()); ?>">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/grayscale.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/grayscale.min.css')); ?>">
 
-            .full-height {
-                height: 100vh;
-            }
+</head>
+<body>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <?php if(Route::has('login')): ?>
-                <div class="top-right links">
-                    <?php if(auth()->guard()->check()): ?>
-                        <a href="<?php echo e(url('/home')); ?>">Home</a>
-                    <?php else: ?>
-                        <a href="<?php echo e(route('login')); ?>">Login</a>
-                        <a href="<?php echo e(route('register')); ?>">Register</a>
-                    <?php endif; ?>
+      <div class="container ce">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="col-xl-4 col-md-offset-4">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h1 class="text-white panel-title">Calculadora de <?php echo e($nombre); ?></h1>
                 </div>
-            <?php endif; ?>
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel Saludo
+                <div class="panel-body">
+                <form action="<?php echo e(url('saludo')); ?>" method="POST">
+                    <div class="form-group">
+                      <label for="valor1s" class="text-white">Ingresa tu primer n&uacute;mero:</label>
+                      <input class="form-control"
+                        type="text"
+                        name="valor1"
+                        placeholder="Primer valor">
+                    </div>
+                    <div class="form-group">
+                      <label for="valor2" class="text-white">Ingresa tu segundo valor:</label>
+                      <input class="form-control"
+                        type="text"
+                        name="valor2"
+                        placeholder="Segundo valor">
+                    </div>
+                    <div class="form-group">
+                        <label for="operador" class="text-white">Seleccione Operador:</label>
+                        <select name="operador">
+                            <option value="suma">Suma</option>
+                            <option value="resta">Resta</option>
+                            <option value="multiplicacion">Multiplicaci&oacute;n</option>
+                            <option value="division">Divisi&oacute;n</option>
+                        </select>
+                    </div>
+                    <button type="reset" value="" class="btn btn-primary btn-block text-white ">Borrar</button>
+                    <button type="submit" class="btn btn-primary btn-block text-white ">Enviar</button>
+                  </form>
                 </div>
-
-                <div class="links">
-                   
-                    <p style="font-size: 100px:color:<?php echo e($color); ?>">Hola: <?php echo e($nombre); ?></p><br>
-                    <p>Apellido: <?php echo e($apellido); ?></p><br>
-                    <p>E-mail: <?php echo e($email); ?></p><br>
-                    <p>Message: <?php echo e($message); ?></p>
-                </div>
+              </div>
             </div>
         </div>
-    </body>
+        <img src="" class="img-fluid" alt="">
+      </div>
+<div>
+</div>
+
+
+</body>
 </html>

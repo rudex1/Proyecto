@@ -1,3 +1,4 @@
+@extends('index')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -8,113 +9,66 @@
 
         <title>Laravel Formulario</title>
 
-        <!-- Fonts -->
+        <!-- Fonts
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
+-->
 
 
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/grayscale.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/grayscale.min.css')}}">
 
 
     </head>
     <body>
-        <!--Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-        </nav>
-
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
+            @section('formulario')
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel Formulario
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase text-white">Laravel Formulario</h1>
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-                <br>
                 <!-- Formulario -->
-                <form action="{{url('saludo')}}" method="GET">
-                    <div>
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" placeholder="Nombre" size="30" maxlength="20" />
-                    </div>
-                    <div>
-                        <label for="name">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" size="30" maxlength="20" />
-                    </div>
-                    <div>
-                        <label for="mail">E-mail:</label>
-                        <input type="email" id="mail" name="email" placeholder="E-mail" size="30" maxlength="50" />
-                    </div>
-                    <div>
-                        <label for="msg">Message:</label>
-                        <textarea id="msg" name="message" placeholder="Message" maxlength="100"></textarea>
-                    </div>
-                    <div>
-                        <label for="color">Color: </label>
-                        <input name="color" type="color" value="#000000" />
-                    </div>
-                    
+
+                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                <h2 class="text-white mb-5"></h2>
+
+                <form action="{{url('saludo')}}" method="POST">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="name" class="text-white">Nombre:</label>
+                            <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Nombre" size="30" maxlength="20" />
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="text-white">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Apellido" size="30" maxlength="20" />
+                        </div>
+                        <div class="form-group">
+                            <label for="mail" class="text-white">E-mail:</label>
+                            <input type="email" id="mail" name="email" placeholder="E-mail" size="30" maxlength="50" />
+                        </div>
+                        <div class="form-group">
+                            <label for="msg" class="text-white">Message:</label>
+                            <textarea id="msg" name="message" placeholder="Message" maxlength="100"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="text-white">Color: </label>
+                            <input name="color" type="color" value="#000000" />
+                        </div>
+
                     <div class="button">
-                        <button type="submit">Enviar</button>
-                        <button type="reset">Borrar</button>
-                        <button type="button">Volver</button>
+                        <button type="submit" class="btn btn-primary mx-auto">Enviar</button>
+                        <button type="reset" class="btn btn-primary mx-auto">Borrar</button>
+                        <button type="button" class="btn btn-primary mx-auto">Volver</button>
                     </div>
                 </form>
-
             </div>
+            @endsection
         </div>
 
 

@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('plantilla')
 
 
 @section("navbar")
@@ -7,10 +7,7 @@
 
 @endsection
 
-
-@section("content")
-    
-    @section("conte")
+@section('section')
     <form action="pagina2.php" method="post">
         <input type="text" name="n1">
             <select class="" name="opciones">

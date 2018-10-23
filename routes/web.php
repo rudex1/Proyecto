@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,17 +17,22 @@ Route::get('/', function () {
 
 /* Ruta saludo */
 /*Route::get('/   /{nombre}/{color}', function($nombre, $color){
-	return view('saludo')->with[('nombre'=>$nombre, 'color'=>$color)];
+return view('saludo')->with[('nombre'=>$nombre, 'color'=>$color)];
 
 })->where('nombre','[a-zA-Z]+');*/
 
 /* Ruta formulario */
-Route::get('/formulario', function(){
-	return view('formulario');
+Route::get('/formulario', function () {
+    return view('formulario');
+});
+Route::get('/index', function () {
+    return view('index');
 });
 
 Route::get('/saludo/{nombre}/{color}', 'PaginaController@index');
 //Route::get('/', 'PaginaController@store');
 Route::get('/saludo', 'PaginaController@store');
-Route::get('/calculadora', 'PaginaController@calcular');
+Route::get('/saludo', 'AppController@nombre');
+Route::get('/saludo', 'AppController@intNombre');
 
+//Route::get('/calculadora', 'PaginaController@calcular');

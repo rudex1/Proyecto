@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+  <head class="head">
+    @yield('head')
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>Laravel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,8 +28,9 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      @yield('navbar')
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -42,7 +44,10 @@
               <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#signup"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#formulario">Formulario</a>
             </li>
           </ul>
         </div>
@@ -51,6 +56,7 @@
 
     <!-- Header -->
     <header class="masthead">
+      @yield('masthead')
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
@@ -62,13 +68,29 @@
 
     <!-- About Section -->
     <section id="about" class="about-section text-center">
+
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
-            <p class="text-white-50">Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-              <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-          </div>
+            <div class="col-xl-4 col-md-offset-4">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h1 class="text-white panel-title">Calculadora laravel</h1>
+                </div>
+                <div class="panel-body">
+                <form action="{{url('saludo')}}" method="Get">
+                    <div class="form-group">
+                      <label for="nombre" class="text-white">Nombre</label>
+                      <input class="form-control"
+                        type="nombre"
+                        name="nombre"
+                        placeholder="Introduce tu Nombre">
+                    </div>
+                    <button class="btn btn-primary btn-block text-white ">Acceder</button>
+                  </form>
+                </div>
+              </div>
+            </div>
         </div>
         <img src="img/ipad.png" class="img-fluid" alt="">
       </div>
@@ -129,6 +151,11 @@
 
       </div>
     </section>
+    <!-- Signup Section formulario-->
+    <section id="formulario" class="signup-section">
+      @yield('formulario')
+
+    </section>
 
     <!-- Signup Section -->
     <section id="signup" class="signup-section">
@@ -137,7 +164,7 @@
           <div class="col-md-10 col-lg-8 mx-auto text-center">
 
             <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-            <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+            <h2 class="text-white mb-5">Suscríbete para recibir actualizaciones!</h2>
 
             <form class="form-inline d-flex">
               <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
@@ -148,6 +175,8 @@
         </div>
       </div>
     </section>
+
+
 
     <!-- Contact Section -->
     <section class="contact-section bg-black">
