@@ -43,26 +43,13 @@ class AppController extends Controller
     }
     public function intNombre(Request $request)
     {
-        return view("saludo")->with(['nombre' => $request->input("Nombre")]);
+        return view("saludo")->with(['nombre' => $request->input("nombre")]);
     }
 
 //vamos al controlador
 
-    public function index()
+    public function calcular(request $request)
     {
-        $users = compras::orderBy('id', 'ASC')->paginate(12);
-
-        //aqui se realiza la suma
-        $compras = compras::all();
-        $total   = 0;
-        foreach ($compras as $compra) {
-            $total = $compra->total + $total;
-        }
-
-        return view('users.index')->with('users', $users)->with('total', $total);
 
     }
-
-// también existe un metodo sum() pero hay que revisar la documentación de laravel
-
 }
