@@ -78,7 +78,8 @@
                   <h1 class="text-white panel-title">Calculadora laravel</h1>
                 </div>
                 <div class="panel-body">
-                <form action="{{url('saludo')}}" method="Get">
+                <form action="{{url('saludo')}}" method="POST">
+                  {{ csrf_field() }}
                     <div class="form-group">
                       <label for="nombre" class="text-white">Nombre</label>
                       <input class="form-control"

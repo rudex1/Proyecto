@@ -33,7 +33,5 @@ Route::get('/saludo/{nombre}/{color}', 'PaginaController@index');
 //Route::get('/', 'PaginaController@store');
 Route::get('/saludo', 'PaginaController@store');
 Route::get('/saludo', 'AppController@nombre');
-Route::get('/saludo', 'AppController@intNombre');
-//Route::get('/saludo', 'AppController@calcular');
-
-//Route::get('/calculadora', 'PaginaController@calcular');
+Route::post('/calculadora', 'AppController@postNombre');
+Route::post('/calculadora', 'AppController@postCalcular');
