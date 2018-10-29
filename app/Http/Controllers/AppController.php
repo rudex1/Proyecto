@@ -41,28 +41,53 @@ class AppController extends Controller
     {
         return view("multi", ['nombre' => $request->input("Nombre")]);
     }
-    public function intNombre(Request $request)
+
+    // nombre
+    public function postNombre(Request $request)
     {
-        return view("saludo")->with(['nombre' => $request->input("Nombre")]);
+        return view('calculadora')->with(['nombre' => $request->input("nombre")]);
     }
 
-//vamos al controlador
+    //vamos al controlador
 
-    public function index()
+    public function calcular(Request $request)
     {
-        $users = compras::orderBy('id', 'ASC')->paginate(12);
-
-        //aqui se realiza la suma
-        $compras = compras::all();
-        $total   = 0;
-        foreach ($compras as $compra) {
-            $total = $compra->total + $total;
+        $nombre    = "nombre";
+        $operacion = $request->input('operacion');
+        $numero1   = $request->input('numero1');
+        $numero2   = $request->input('numero2');
+        $error     = false;
+        switch ($operacion) {
+            case 'sumar':
+                $resultado = $numero1 + $numero2;
+                break;
+            case 'restar':
+                $resultado = $numero1 - $numero2;
+                break;
+            case 'multiplicar':
+                $resultado = $numero1 * $numero2;
+                break;
+            case 'dividir':
+                if ($numero1 == 0 || $numero2 == 0) {
+                    $resultado = "0 no se divide";
+                    $error     = true;
+                } else {
+                    $resultado = $numero1 / $numero2;
+                }
+                break;
+            case 'potencia':
+                $resultado = pow($numero1, $numero2);
+                break;
+            default:
+                $resultado = "Eso no es un numero";
+                break;
         }
-
-        return view('users.index')->with('users', $users)->with('total', $total);
-
+        return view('calculadora', [
+            'nombre'    => $request->input("nombre"),
+            'numero1'   => $numero1,
+            'numero2'   => $numero2,
+            'error'     => $error,
+            'resultado' => $resultado]);
     }
-
-// también existe un metodo sum() pero hay que revisar la documentación de laravel
 
 }

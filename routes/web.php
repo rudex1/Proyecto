@@ -28,11 +28,12 @@ Route::get('/formulario', function () {
 Route::get('/index', function () {
     return view('index');
 });
+Route::get('/bienvenido', function () {
+    return view('bienvenido');
+});
 
 Route::get('/saludo/{nombre}/{color}', 'PaginaController@index');
-//Route::get('/', 'PaginaController@store');
-Route::get('/saludo', 'PaginaController@store');
-Route::get('/saludo', 'AppController@nombre');
-Route::get('/saludo', 'AppController@intNombre');
-
-//Route::get('/calculadora', 'PaginaController@calcular');
+//Route::get('/saludo', 'PaginaController@store');
+//calculadora*/
+Route::get('/calculadora', 'AppController@postNombre');
+Route::post('/calculadora', 'AppController@calcular');
