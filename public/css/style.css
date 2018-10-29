@@ -1,50 +1,67 @@
-html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
+html {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+body {
+    /* background-color: #9AD1ED;*/
+    background-image: url(../img/bg-signup.jpg);
+}
+.container {
+    max-width: 450px;
+    height: auto;
+    background-color: #EFEFEF;
+    margin: 5% auto;
+    padding-bottom: 1rem;
+}
+.form__top {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0 1rem;
+    border-top: solid .4rem #F39B53;
+    margin-bottom: 1rem;
+}
+.form__top h2 {
+    font-weight: bold;
+    color: #5DADE2;
+    font-size: 18px;
+}
+h2 span {
+    color: #F39B53;
+}
+.form__reg {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.btn__form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+.input, .btn__submit, .btn__reset {
+    background-color: #EFEFEF;
+    padding: .5rem;
+    margin: .5rem 0;
+    border: none;
+    border-bottom: solid #C8C8C8 .2rem;
+    transition: all .5s;
+}
+.input:focus {
+    border-bottom: solid #F39B53 .2rem;
+}
+.btn__submit, .btn__reset {
+    width: 40%;
+    border-bottom: none;
+    background-color: #31B1E5;
+    color: white;
+}
+.btn__reset {
+    background-color: #EDA135;
+}
+.btn__submit:hover {
+    background-color: #4C9ED9;
+}
+.btn__reset:hover {
+    background-color: #FA9535;
+}

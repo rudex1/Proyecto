@@ -58,18 +58,18 @@ class AppController extends Controller
         $numero2   = $request->input('numero2');
         $error     = false;
         switch ($operacion) {
-            case 'sumar':
+            case 'Suma':
                 $resultado = $numero1 + $numero2;
                 break;
-            case 'restar':
+            case 'Resta':
                 $resultado = $numero1 - $numero2;
                 break;
-            case 'multiplicar':
+            case 'Multiplicacion':
                 $resultado = $numero1 * $numero2;
                 break;
-            case 'dividir':
+            case 'Division':
                 if ($numero1 == 0 || $numero2 == 0) {
-                    $resultado = "0 no se divide";
+                    $resultado = "No es divisible por: 0";
                     $error     = true;
                 } else {
                     $resultado = $numero1 / $numero2;
