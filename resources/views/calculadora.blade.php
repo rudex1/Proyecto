@@ -20,6 +20,7 @@
             <div class="col-xl-4 col-md-offset-4">
               <div class="panel panel-default">
                 <div class="panel-heading">
+<<<<<<< HEAD
                   <h1 class="text-white panel-title">Calculadora de: {{ $nombre }}
                 </div>
 
@@ -28,18 +29,35 @@
                     {{ csrf_field() }}
 
                     <input type="hidden" name="nombre" value="{{ $nombre }}">
+=======
+                  <h1 class="text-white panel-title">Calculadora de {{ $nombre }}</h1>
+                </div>
+                <div class="panel-body">
+                <form action="{{url('calculadora')}}" method="POST">
+                    {{ csrf_field() }}
+
+                    <input type="hidden" name="nombre" value="{{$nombre}}">
+>>>>>>> cfe3c2d64ab59e2d75282a5f93a48c22ecf2571c
                     @if(isset($numero1) && isset($numero2))
                         <label for="numero1" class="text-white">Ingresa tu primer n&uacute;mero:</label>
                         <input class="form-control"
                         type="number"
                         name="numero1"
+<<<<<<< HEAD
                         value="{{ $numero1 }}"
+=======
+                        value="{{$numero1}}"
+>>>>>>> cfe3c2d64ab59e2d75282a5f93a48c22ecf2571c
                         placeholder="Primer Numero">
                         <label for="numero2" class="text-white">Ingresa tu segundo n&uacute;mero:</label>
                         <input class="form-control"
                         type="number"
                         name="numero2"
+<<<<<<< HEAD
                         value="{{ $numero2 }}"
+=======
+                        value="{{$numero2}}"
+>>>>>>> cfe3c2d64ab59e2d75282a5f93a48c22ecf2571c
                         placeholder="Segundo Numero">
                     @else
                         <label for="numero1" class="text-white">Ingresa tu primer n&uacute;mero:</label>

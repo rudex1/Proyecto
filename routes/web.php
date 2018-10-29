@@ -33,7 +33,15 @@ Route::get('/bienvenido', function () {
 });
 
 Route::get('/saludo/{nombre}/{color}', 'PaginaController@index');
+<<<<<<< HEAD
 //Route::get('/saludo', 'PaginaController@store');
 //calculadora*/
 Route::get('/calculadora', 'AppController@postNombre');
 Route::post('/calculadora', 'AppController@calcular');
+=======
+//Route::get('/', 'PaginaController@store');
+Route::get('/saludo', 'PaginaController@store');
+Route::get('/saludo', 'AppController@nombre');
+Route::post('/calculadora', 'AppController@postNombre');
+Route::post('/calculadora', 'AppController@postCalcular');
+>>>>>>> cfe3c2d64ab59e2d75282a5f93a48c22ecf2571c
