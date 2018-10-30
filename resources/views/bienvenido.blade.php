@@ -18,7 +18,7 @@
 		<form class="form__reg" action="/calculadora" method="POST">
 			{{ csrf_field() }}
 			<label  for="nombre">Introduce tu Nombre:</label>
-			<input  class="input" type="text" placeholder="&#128100;  Nombre" required autofocus name="nombre" >
+			<input  class="input" type="text" name="nombre" placeholder="&#128100; Nombre" required autofocus>
 
 
 			<div class="btn__form">

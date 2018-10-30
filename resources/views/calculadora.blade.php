@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="form__top">
-            <h2 class="text-white panel-title">Calculadora de: {{ $nombre }}</h2>
+            <h2>Calculadora de: <span>{{ $nombre }}</span></h2>
         </div>
             <form class="form__reg" action="{{url('calculadora')}}" method="POST">
                     {{ csrf_field() }}
@@ -27,26 +27,26 @@
                         type="number"
                         name="numero1"
                         value="{{ $numero1 }}"
-                        placeholder="&#35; Primer Numero">
+                        placeholder="&#35; Primer Numero" required autofocus>
 
                         <label for="numero2" class="text-white">Ingresa tu segundo n&uacute;mero:</label>
                         <input class="input"
                         type="number"
                         name="numero2"
                         value="{{ $numero2 }}"
-                        placeholder="&#35; Segundo Numero">
+                        placeholder="&#35; Segundo Numero" required>
                     @else
                         <label for="numero1" class="text-white">Ingresa tu primer n&uacute;mero:</label>
                         <input class="input"
                         type="number"
                         name="numero1"
-                        placeholder="&#35; Primer Numero">
+                        placeholder="&#35; Primer Numero" required autofocus>
 
                         <label for="numero2" class="text-white">Ingresa tu segundo n&uacute;mero:</label>
                         <input class="input"
                         type="number"
                         name="numero2"
-                        placeholder="&#35; Segundo Numero">
+                        placeholder="&#35; Segundo Numero" required>
                     @endif
             <div class="btn__form">
                 <button type="submit" value="Suma" name="operacion" class="btn__submit">Suma</button>
